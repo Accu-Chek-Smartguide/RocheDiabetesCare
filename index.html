@@ -1,32 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réalité Augmentée avec AR.js</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
-    <style>
-        body, html {
-            margin: 0;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <title>AR Model Viewer</title>
 </head>
 <body>
-    <a-scene embedded arjs>
-        <!-- Ajoutez une lumière -->
-        <a-light type="directional" position="0 1 0" intensity="0.5"></a-light>
-
-        <!-- Définissez un modèle 3D -->
-        <a-marker preset="hiro">
-            <a-entity gltf-model="https://drive.google.com/file/d/1efYbeg0uxw2Yz9ddYU5cR4rIdZREW55H/view?usp=drive_link" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
-        </a-marker>
-
-        <!-- Une caméra AR.js -->
-        <a-entity camera></a-entity>
-    </a-scene>
+    <h1>View Model in AR</h1>
+    <!-- Link to your 3D model -->
+    <a href="https://drive.google.com/file/d/1efYbeg0uxw2Yz9ddYU5cR4rIdZREW55H/view?usp=drive_link" rel="ar" id="ar-link">View in AR</a>
+    
+    <script>
+        // Check if the device is an iPhone
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            document.getElementById('ar-link').href = 'https://your-https://drive.google.com/file/d/1efYbeg0uxw2Yz9ddYU5cR4rIdZREW55H/view?usp=drive_link-to-model/your-model.usdz';
+        }
+    </script>
 </body>
 </html>
