@@ -12,15 +12,15 @@
     <body style="margin : 0px; overflow: hidden;">
 
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
-            <a-assets> 
-                <a-asset-item id="Barrel.mtl" src="https://github.com/BrunoSilvaCosta/RocheDiabetesCare/tree/eac9dbb1508fbd746452298aa41cada17488a462/Asset/Model/Barrel.mtl.mtl"></a-asset-item>
-                <a-asset-item id="Barrel.obj" src="https://github.com/BrunoSilvaCosta/RocheDiabetesCare/tree/eac9dbb1508fbd746452298aa41cada17488a462/Asset/Model/Barrel.obj.obj"></a-asset-item>
             <a-assets>
-
+                <a-asset-item id="Test" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
+            </a-assets>
         <a-marker preset="hiro">
-            
-            <a-box color="#808080"position="0 0.5 0"opacity="0.5"></a-box>
+            <a-entity
+                gltf-model="#Test"
+                scale="1">
+            </a-entity>
+            <!--<a-box color="#808080"position="0 0.5 0"opacity="0.5"></a-box>-->
         </a-marker>
 
         <a-entity camera></a-entity>
