@@ -17,8 +17,10 @@
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
             
         <a-marker preset="hiro">
-           
-            <a-box color="#808080"position="0 0.5 0"opacity="0.5"></a-box>
+            <a-entity scale=".2 .2 .2">
+                <a-entity gltf-model="Model/test.gltf" scale="1 1 1">
+              </a-entity>
+            <!--<a-box color="#808080"position="0 0.5 0"opacity="0.5"></a-box>-->
         </a-marker>
 
         <a-entity camera></a-entity>
