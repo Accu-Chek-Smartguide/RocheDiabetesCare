@@ -12,18 +12,15 @@
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' hidden>
 
         <a-assets>
-            <a-asset-item id="animated-asset" src="https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Asset/Model/Monkey.glb"></a-asset-item>
+            <a-asset-item id="Monkey" src="https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Asset/Model/Monkey.glb"></a-asset-item>
         </a-assets>
 
-        <a-marker type='hiro'>
-            <a-box position='0 0.5 0' color="yellow" opacity="0.5"></a-box>
-        </a-marker>
-
-        <a-marker id="animated-marker" type='barcode' value='6'>
+        <a-marker id="Monkey" type='hiro'>
             <a-entity
-                gltf-model="#animated-asset"
+                gltf-model="#Monkey"
                 scale="2">
             </a-entity>
+            <a-box position='0 0.5 0' color="yellow" opacity="0.5"></a-box>
         </a-marker>
 
         <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
