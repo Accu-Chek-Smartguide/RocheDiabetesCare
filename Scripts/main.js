@@ -1,4 +1,4 @@
-const splash = document.querySelector{.splash};
+const splash = document.querySelector(".splash");
 
 document.addEventListener ("DOMContentLoaded", (e)=>{
     setTimeout(()=>{
