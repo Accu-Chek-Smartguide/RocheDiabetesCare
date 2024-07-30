@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-        }
-        .logo {
-            width: 200px;
-            height: 200px;
-            background-image: url('https://via.placeholder.com/200'); /* Remplacer par l'URL de votre logo */
-            background-size: cover;
-            animation: fadeOut 5s forwards;
-        }
-        @keyframes fadeOut {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-    </style>
+    
     <head>
 
         <title>
@@ -31,10 +10,46 @@
             <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
             <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
             <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-
+            <style>
+                body, html {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                }
+        
+                .logo-container {
+                    opacity: 1;
+                    transition: opacity 3s ease-in-out;
+                }
+        
+                .logo {
+                    width: 150px;
+                    height: auto;
+                }
+        
+                .hidden {
+                    opacity: 0;
+                }
+        
+                .fade-out {
+                    animation: fadeOut 3s forwards;
+                }
+        
+                @keyframes fadeOut {
+                    to {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            </style>
     <head>
     <body style="margin : 0px; overflow: hidden;">
-        <div class="logo"></div>
 
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
             
@@ -48,6 +63,22 @@
         <a-entity camera></a-entity>
 
         </a-scene>
+        <div class="logo-container" id="logoContainer">
+            <img src="https://logowik.com/content/uploads/images/798_roche.jpg" alt="Logo" class="logo">
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const logoContainer = document.getElementById('logoContainer');
+                setTimeout(() => {
+                    logoContainer.classList.add('hidden');
+                }, 3000); // 3 secondes avant de commencer à disparaître
+    
+                setTimeout(() => {
+                    document.body.classList.add('fade-out');
+                }, 6000); // 6 secondes avant que la page blanche disparaisse
+            });
+        </script>
 
     </body>
 </html>
