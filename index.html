@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/200'); /* Remplacer par l'URL de votre logo */
+            background-size: cover;
+            animation: fadeOut 5s forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
     <head>
 
         <title>
@@ -12,21 +34,13 @@
 
     <head>
     <body style="margin : 0px; overflow: hidden;">
+        <div class="logo"></div>
 
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-<<<<<<< HEAD
-            <a-sky src="HDRI/studio_small_09_4k.hdr" radius="5000"></a-sky>
+            
         <a-marker preset="hiro">
             <a-entity scale=".2 .2 .2">
-                <a-entity gltf-model="Model/testproduct.gltf" scale="1 1 1"
-                environment="preset: none; hdr: HDRI/studio_small_09_4k.hdr;">
-                    
-=======
-        <a-sky src="HDRI/studio_small_09_4k.hdr" radius="5000"></a-sky>
-        <a-marker preset="hiro">
-            <a-entity scale="5 5 5">
-                <a-entity gltf-model="Model/Box-test.gltf" scale="3 3 3">
->>>>>>> bb5d0dba55d97a7f4c2c6495dc56f8c5fe66b071
+                <a-entity gltf-model="Model/testproduct.gltf" scale="1 1 1">
               </a-entity>
             <a-box position="0 0.5 0"opacity="0"></a-box>
         </a-marker>
