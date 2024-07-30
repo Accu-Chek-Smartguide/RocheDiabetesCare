@@ -6,14 +6,14 @@ window.onload = function() {
 
     // Fade out the logo
     setTimeout(() => {
-        logo.style.transition = 'opacity 2s';
+        logo.style.transition = 'opacity 5s';
         logo.style.opacity = 0;
     }, 1000);
 
     // Fade out the white screen
     setTimeout(() => {
         logoContainer.style.display = 'none';
-        whiteScreen.style.transition = 'opacity 2s';
+        whiteScreen.style.transition = 'opacity 8s';
         whiteScreen.style.opacity = 0;
     }, 3000);
 
