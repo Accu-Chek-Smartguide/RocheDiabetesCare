@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splash Screen Example</title>
-    <link rel="stylesheet" href="Style/style.css">
-</head>
-<body>
-    <div id="splash-screen">
-        <img src="https://logowik.com/content/uploads/images/798_roche.jpg" alt="Logo" id="splash-logo">
-    </div>
-    <div id="main-content">
+<html>
+    <head>
+
+        <title>
+            RocheDiabetesCare
+        </title>
+            <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+            <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+            <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <head>
+    <body style="margin : 0px; overflow: hidden;">
+
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
             
-            <a-marker preset="hiro">
-                <a-entity scale="1 1 1">
-                    <a-entity gltf-model="Model/testproduct.gltf" scale="3 3 3">
-                  </a-entity>
-                <a-box position="0 0.5 0"opacity="0"></a-box>
-            </a-marker>
-    
-            <a-entity camera></a-entity>
-    
-            </a-scene>
-    </div>
-    <script src="Scripts/main.js"></script>
-</body>
+        <a-marker preset="hiro">
+            <a-entity scale=".2 .2 .2">
+                <a-entity gltf-model="Model/testproduct.gltf" scale="1 1 1">
+              </a-entity>
+            <a-box position="0 0.5 0"opacity="0"></a-box>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+
+        </a-scene>
+
+    </body>
 </html>
