@@ -1,7 +1,28 @@
-const splash = document.querySelector(".splash");
+let intro = document.querySelector(".intro");
+let logo = document.querySelector(".logo-header");
+let logoSpan = document.querySelector(".logo");
 
-document.addEventListener ("DOMContentLoaded", (e)=>{
+window.addEventListener("DOMContentLoaded", ()=>{
+
     setTimeout(()=>{
-        splash.classList.add('display-none');
-    }, 2000);
+
+        logoSpan.forEach((span, idx)=>{
+            setTimeout(()=>{
+                span.classList.add("active");
+            }, (idx + 1) * 400)
+        });
+
+        setTimeout(()=>{
+            logoSpan.forEach((span, idx)=>{
+
+                setTimeout(()=>{
+                    span.classList.remove("active");
+                    span.classList.add("active");
+                }, (idx + 1) * 50)
+            })
+        },2000);
+        setTimeout(()=>{
+            intro.style.top = "-100vh"
+        }, 2300)
+    })
 })

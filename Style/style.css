@@ -1,45 +1,58 @@
-body, html {
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-.splash {
+header{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1005;
+    height: 80px;
+}
+
+header h4{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;   
-    z-index: 200;
+    left: 10%;
+    bottom: 1rem;
+    font-size: 1.6rem;
 }
 
-.splash.display-none {
+.intro{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color:whitesmoke;
+    transition: 1s;
+}
+
+.logo-header{
     position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    z-index: -10;
-    transition: all 0.5s;
-}
-@keyframes fadeIn {
-    to{
-        opacity: 1;
-    }
-    
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:rgb(25, 0, 255);
 }
 
-.fade-in{
+.logo{
+    position: absolute;
+    display: inline-block;
+    bottom: -20px;
     opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
+}
+
+.logo.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
 }
