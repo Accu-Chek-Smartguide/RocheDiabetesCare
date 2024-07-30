@@ -1,58 +1,47 @@
-* {
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-header{
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 1005;
-    height: 80px;
-}
-
-header h4{
-    position: absolute;
-    left: 10%;
-    bottom: 1rem;
-    font-size: 1.6rem;
-}
-
-.intro{
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
     width: 100%;
-    height: 100vh;
-    background-color:whitesmoke;
-    transition: 1s;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-.logo-header{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color:rgb(25, 0, 255);
+#splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Change to your desired background color */
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 3s; /* Adjust the delay as needed (3 seconds) */
+    z-index: 10;
 }
 
-.logo{
-    position: absolute;
-    display: inline-block;
-    bottom: -20px;
+#splash-logo {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+}
+
+#main-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
     opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 3s; /* Match this delay with the splash screen delay */
 }
 
-.logo.active{
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 0.5s;
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
 }
 
-.logo.fade{
-    bottom: 150px;
-    opacity: 0;
-    transition: ease-in-out 0.5s;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }

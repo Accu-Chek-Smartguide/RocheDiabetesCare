@@ -1,28 +1,12 @@
-let intro = document.querySelector(".intro");
-let logo = document.querySelector(".logo-header");
-let logoSpan = document.querySelector(".logo");
+document.addEventListener("DOMContentLoaded", function() {
+    const splashScreen = document.getElementById('splash-screen');
+    const mainContent = document.getElementById('main-content');
 
-window.addEventListener("DOMContentLoaded", ()=>{
-
-    setTimeout(()=>{
-
-        logoSpan.forEach((span, idx)=>{
-            setTimeout(()=>{
-                span.classList.add("active");
-            }, (idx + 1) * 400)
-        });
-
-        setTimeout(()=>{
-            logoSpan.forEach((span, idx)=>{
-
-                setTimeout(()=>{
-                    span.classList.remove("active");
-                    span.classList.add("active");
-                }, (idx + 1) * 50)
-            })
-        },2000);
-        setTimeout(()=>{
-            intro.style.top = "-100vh"
-        }, 2300)
-    })
-})
+    setTimeout(() => {
+        splashScreen.classList.add('hidden');
+        setTimeout(() => {
+            splashScreen.style.display = 'none';
+            mainContent.style.display = 'block';
+        }, 1000); // Match this duration to the fadeOut animation duration
+    }, 3000); // Adjust the timeout as needed (3000ms = 3 seconds)
+});
