@@ -1,23 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const presentation = document.getElementById("presentation");
-    const logo = document.getElementById("logo");
-    const model = document.getElementById("model");
+window.onload = function() {
+    const logo = document.getElementById('logo');
+    const logoContainer = document.getElementById('logo-container');
+    const whiteScreen = document.getElementById('white-screen');
+    const arContainer = document.getElementById('ar-container');
 
-    // Fade out the logo after 3 seconds
+    // Fade out the logo
     setTimeout(() => {
-        logo.style.transition = "opacity 2s";
+        logo.style.transition = 'opacity 2s';
         logo.style.opacity = 0;
+    }, 1000);
 
-        // Hide the presentation div after the logo has faded out
-        setTimeout(() => {
-            presentation.style.transition = "opacity 2s";
-            presentation.style.opacity = 0;
-
-            // Display the AR scene after the presentation has faded out
-            setTimeout(() => {
-                presentation.style.display = "none";
-                model.style.display = "block";
-            }, 2000);
-        }, 2000);
+    // Fade out the white screen
+    setTimeout(() => {
+        logoContainer.style.display = 'none';
+        whiteScreen.style.transition = 'opacity 2s';
+        whiteScreen.style.opacity = 0;
     }, 3000);
-});
+
+    // Show the AR container
+    setTimeout(() => {
+        whiteScreen.style.display = 'none';
+        arContainer.style.display = 'block';
+    }, 5000);
+}
