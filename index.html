@@ -6,12 +6,13 @@
         <title>
             RocheDiabetesCare
         </title>
+            <link rel="stylesheet" href="Style/style.css" />
             <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
             <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
             <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
             <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-            <script async src="Scripts/main.js"></script>
-            <link rel="stylesheet" type="text/css" href="Style/style.css" />
+            <script src="Scripts/main.js" defer></script>
+            
 
     <head>
     <body style="margin : 0px; overflow: hidden;">
@@ -23,7 +24,7 @@
             
         <a-marker preset="hiro">
             <a-entity scale=".2 .2 .2">
-                <a-entity gltf-model="Model/testproduct.gltf" scale="1 1 1">
+                <a-entity id="model" gltf-model="Model/testproduct.gltf" scale="1 1 1">
               </a-entity>
             <a-box position="0 0.5 0"opacity="0"></a-box>
         </a-marker>
