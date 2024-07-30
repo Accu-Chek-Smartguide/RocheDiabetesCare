@@ -10,11 +10,28 @@ body, html {
 }
 
 .splash {
-    display: block;
-    margin:  auto;
-    margin-left: 25%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;   
+    z-index: 200;
 }
 
+.splash.display-none {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: -10;
+    transition: all 0.5s;
+}
 @keyframes fadeIn {
     to{
         opacity: 1;
