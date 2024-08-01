@@ -16,13 +16,13 @@
 
         <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
             
-            <a-marker-camera type="pattern" url="https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Images/Marker-custom.patt">
-                <a-marker preset="hiro">
+            <a-marker type="pattern" patternUrl="https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Images/Marker-custom.patt">
+               
                 <a-entity scale="1 1 1">
                 <a-entity gltf-model="Model/Box-test.gltf" scale="10 10 10">
               </a-entity>
             <a-box position="0 0.5 0"opacity="0"></a-box>
-        </a-marker-camera>
+        </a-marker>
 
         <a-entity camera></a-entity>
 
