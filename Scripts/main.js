@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 5000); // Durée du splash screen en millisecondes (ici 3 secondes)
 });
 const loader = new THREE.TextureLoader();
-const baseColorTexture = loader.load('https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Model/Box-MAT_BaseColor.jpg');
-const normalMapTexture = loader.load('https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Model/Box-MAT_Normal.jpg');
-const roughnessMapTexture = loader.load('https://github.com/BrunoSilvaCosta/RocheDiabetesCare/blob/main/Model/Box-MAT_Roughness.jpg');
+const baseColorTexture = loader.load('Model/Box-MAT_BaseColor.jpg');
+const normalMapTexture = loader.load('Model/Box-MAT_Normal.jpg');
+const roughnessMapTexture = loader.load('Model/Box-MAT_Roughness.jpg');
 
 const material = new THREE.MeshStandardMaterial({
   map: baseColorTexture,
@@ -19,3 +19,7 @@ const material = new THREE.MeshStandardMaterial({
 
 // Assurez-vous que ces textures sont visibles
 console.log(baseColorTexture, normalMapTexture, roughnessMapTexture);
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
