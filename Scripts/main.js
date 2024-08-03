@@ -1,12 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const splashScreen = document.getElementById('splash-screen');
-    const mainContent = document.getElementById('main-content');
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const splashScreen = document.querySelector('.splash-screen');
 
-    setTimeout(() => {
-        splashScreen.classList.add('hidden');
-        setTimeout(() => {
+    // Remove splash screen after animation
+    splashScreen.addEventListener('animationend', (event) => {
+        if (event.animationName === 'fadeOut') {
             splashScreen.style.display = 'none';
-            mainContent.style.display = 'block';
-        }, 1000); // Match this duration to the fadeOut animation duration
-    }, 3000); // Adjust the timeout as needed (3000ms = 3 seconds)
+        }
+    });
 });
