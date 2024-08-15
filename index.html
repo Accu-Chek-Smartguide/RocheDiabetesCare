@@ -41,7 +41,7 @@
             pmremGenerator.compileEquirectangularShader();
 
             const hdrLoader = new THREE.RGBELoader();
-            hdrLoader.load('Images/HDRI/brown_photostudio_01_1k.hdr', function (texture) {
+            hdrLoader.load('https://github.com/Accu-Chek-Smartguide/RocheDiabetesCare/blob/main/Images/HDRI/brown_photostudio_01_1k.hdr', function (texture) {
               const envMap = pmremGenerator.fromEquirectangular(texture).texture;
 
               // Applique la map d'environnement HDRI aux modèles 3D
