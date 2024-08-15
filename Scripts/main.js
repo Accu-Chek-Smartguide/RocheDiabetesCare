@@ -23,3 +23,33 @@ console.log(baseColorTexture, normalMapTexture, roughnessMapTexture);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+// Scripts/main.js
+
+AFRAME.registerComponent('apply-hdri-lighting', {
+  init: function () {
+    const sceneEl = this.el.sceneEl;
+    const renderer = sceneEl.renderer;
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    pmremGenerator.compileEquirectangularShader();
+
+    const hdrLoader = new THREE.RGBELoader();
+    hdrLoader.load('Images/HDRI/brown_photostudio_01_1k.hdr', function (texture) {
+      const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+
+      // Apply the HDR environment map to the scene
+      sceneEl.object3D.traverse(function (node) {
+        if (node.isMesh) {
+          node.material.envMap = envMap;
+          node.material.needsUpdate = true;
+        }
+      });
+
+      // Optionally, you can set the background to the HDRI if desired
+      sceneEl.background = envMap;
+    });
+  }
+});
+
+// Apply the HDR lighting component to the scene
+document.querySelector('a-scene').setAttribute('apply-hdri-lighting', '');
