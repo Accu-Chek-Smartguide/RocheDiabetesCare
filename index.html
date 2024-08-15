@@ -16,14 +16,18 @@
     </div>
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+        
 
-         <a-sky color="#ECECEC"></a-sky>
+        <a-light type="point" position="2 4 -2" intensity="0.5" color="#ffcc99" distance="10"></a-light>
+        <a-light type="directional" position="-1 2 1" intensity="0.7" color="#ffffff"></a-light>
+         <a-light type="ambient" intensity="0.4" color="#ffffff"></a-light>
 
         <a-marker type="pattern" url="https://raw.githubusercontent.com/BrunoSilvaCosta/RocheDiabetesCare/main/Images/Marker-custom.patt">
             <a-entity scale="1 1 1">
                 <a-entity gltf-model="Model/TestJPG.gltf" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="Model/package.gltf" scale="10 10 10" position="0 0 0"></a-entity>
                 <a-box position="0 0.5 0" opacity="0"></a-box>
+                <a-plane rotation="-90 0 0" width="10" height="10" color="#ffffff"></a-plane>
             </a-marker>
         <a-entity camera></a-entity>
 
