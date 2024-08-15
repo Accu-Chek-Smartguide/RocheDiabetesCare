@@ -27,7 +27,28 @@
                 <a-box position="0 0.5 0" opacity="0"></a-box>
             </a-marker>
         <a-entity camera></a-entity>
+<script>
+      AFRAME.registerComponent('hdri-lighting', {
+        init: function () {
+          const sceneEl = this.el.sceneEl;
+          const renderer = sceneEl.renderer;
+          const pmremGenerator = new THREE.PMREMGenerator(renderer);
+          pmremGenerator.compileEquirectangularShader();
 
+          const hdrLoader = new THREE.RGBELoader();
+          hdrLoader.load('Images/HDRI/brown_photostudio_01_1k.hdr', function (texture) {
+            const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+            sceneEl.object3D.environment = envMap;
+
+            // Optionnel : appliquer la HDRI comme skybox
+            sceneEl.object3D.background = envMap;
+          });
+        }
+      });
+
+      // Appliquez le composant à la scène
+      document.querySelector('a-scene').setAttribute('hdri-lighting', '');
+    </script>
     </a-scene>
 
     <script src="Scripts/main.js"></script>
