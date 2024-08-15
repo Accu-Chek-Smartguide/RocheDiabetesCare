@@ -31,36 +31,7 @@
 
     </a-scene>
 
-    <script>
-        // Composant personnalisé pour charger et appliquer la HDRI
-        AFRAME.registerComponent('apply-hdri-lighting', {
-          init: function () {
-            const sceneEl = this.el.sceneEl;
-            const renderer = sceneEl.renderer;
-            const pmremGenerator = new THREE.PMREMGenerator(renderer);
-            pmremGenerator.compileEquirectangularShader();
-
-            const hdrLoader = new THREE.RGBELoader();
-            hdrLoader.load('https://github.com/Accu-Chek-Smartguide/RocheDiabetesCare/blob/main/Images/HDRI/brown_photostudio_01_1k.hdr', function (texture) {
-              const envMap = pmremGenerator.fromEquirectangular(texture).texture;
-
-              // Applique la map d'environnement HDRI aux modèles 3D
-              sceneEl.querySelectorAll('[gltf-model]').forEach(entity => {
-                entity.getObject3D('mesh').traverse(node => {
-                  if (node.isMesh) {
-                    node.material.envMap = envMap;
-                    node.material.needsUpdate = true;
-                  }
-                });
-              });
-            });
-          }
-        });
-
-        // Applique le composant à la scène
-        document.querySelector('a-scene').setAttribute('apply-hdri-lighting', '');
-    </script>
-
+  
     <script src="Scripts/main.js"></script>
 </body>
 </html>
