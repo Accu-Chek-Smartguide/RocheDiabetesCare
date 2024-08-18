@@ -3,10 +3,9 @@
 <head>
     <title>RocheDiabetesCare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Latest A-Frame version -->
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <!-- AR.js for A-Frame -->
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <link rel="icon" href="https://logowik.com/content/uploads/images/798_roche.jpg" type="image/icon type">
     <link rel="stylesheet" href="Style/style.css">
 </head>
@@ -17,18 +16,20 @@
     </div>
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
         <a-light type="directional" intensity="0.75" position="1 1 0.5"></a-light>
         <a-light type="point" intensity="0.75" position="-1 1 -0.5"></a-light>
+
 
         <a-marker type="pattern" url="https://raw.githubusercontent.com/BrunoSilvaCosta/RocheDiabetesCare/main/Images/Marker-custom.patt">
             <a-entity scale="1 1 1">
                 <a-entity gltf-model="Model/SensorandBox.gltf" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="Model/package.gltf" scale="10 10 10"></a-entity>
+                <a-entity gltf-model="Model/package.gltf" scale="10 10 10" ></a-entity>
                 <a-box position="0 0.5 0" opacity="0"></a-box>
-            </a-entity>
-        </a-marker>
-
+                 
+            </a-marker>
         <a-entity camera></a-entity>
+
     </a-scene>
 
     <script src="Scripts/main.js"></script>
