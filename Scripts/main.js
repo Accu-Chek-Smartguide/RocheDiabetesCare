@@ -23,3 +23,7 @@ console.log(baseColorTexture, normalMapTexture, roughnessMapTexture);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+var renderer = new THREE.WebGLRenderer({
+  logarithmicDepthBuffer: true
+});
