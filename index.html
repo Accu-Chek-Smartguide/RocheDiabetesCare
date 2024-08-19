@@ -17,8 +17,7 @@
 
     <a-scene  renderer="logarithmicDepthBuffer: true" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
 
-        <a-light type="directional" intensity="0.75" position="1 1 0.5"></a-light>
-        <a-light type="point" intensity="0.75" position="-1 1 -0.5"></a-light>
+   <a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
 
         <a-marker type="pattern" url="https://raw.githubusercontent.com/BrunoSilvaCosta/RocheDiabetesCare/main/Images/Marker-custom.patt">
             <a-entity scale="1 1 1">
