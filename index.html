@@ -15,7 +15,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Hoffmann-La_Roche_logo.svg" alt="Logo" class="logo">
     </div>
 
-    <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+    <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; renderer='logarithmicDepthBuffer: true;'>
 
         <a-light type="directional" intensity="0.75" position="1 1 0.5"></a-light>
         <a-light type="point" intensity="0.75" position="-1 1 -0.5"></a-light>
@@ -28,7 +28,7 @@
                 <a-box position="0 0.5 0" opacity="0"></a-box>
                  
             </a-marker>
-        <a-entity camera></a-entity>
+        <a-entity camera="far:100000; near:0.01"></a-entity>
 
     </a-scene>
 
