@@ -15,7 +15,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Hoffmann-La_Roche_logo.svg" alt="Logo" class="logo">
     </div>
 
-    <a-scene  renderer="logarithmicDepthBuffer: true" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+    <a-scene  renderer="logarithmicDepthBuffer: true; antialias: true; colorManagement: true;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
 
         
           <a-light type="directional" intensity="0.75" position="1 1 1" rotation="0 0 45"></a-light>
